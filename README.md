@@ -26,7 +26,7 @@ Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagen
 
 ## Ausbildungssuche
 
-**URL:** https://web.arbeitsagentur.de/ausbildungssuche/berufsausbildung-suche
+**URL:** https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot
 	
 
 Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen get Parametern zu filtern:
