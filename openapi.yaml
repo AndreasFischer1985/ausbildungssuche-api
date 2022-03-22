@@ -194,10 +194,12 @@ components:
                       id: 
                         type: integer
                         example: 1
-                  bezeichnung: 
-                      type: string
-                      example: Vor-Ort-Vollzeit
+                      bezeichnung: 
+                        type: string
+                        example: Vor-Ort-Vollzeit
                   dauer:
+                    type: object
+                    properties:
                       id: 
                         type: integer
                         example: 8
@@ -205,7 +207,7 @@ components:
                         type: string
                         example: mehr als 2 Jahre bis 3 Jahre
                   anbieterbewertung: 
-                        type: string
+                    type: string
                   angebot:
                     type: object
                     properties:
@@ -215,72 +217,74 @@ components:
                       titel: 
                         type: string
                         example: Physiotherapeut(in) und Bachelor of Science Physiotherapie (Ausbildungsbegleitender Studiengang)
-                        inhalt: 
-                          type: string
-                          example: '<p>Inhalte gemäß den geltenden Rechtsgrundlagen</p>'
-                        abschlussart: 
-                          type: string
-                          example: 'Staatliche Prüfung und Bachelorprüfung (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)'
-                        abschlussbezeichnung: 
+                      inhalt: 
+                        type: string
+                        example: '<p>Inhalte gemäß den geltenden Rechtsgrundlagen</p>'
+                      abschlussart: 
+                        type: string
+                        example: 'Staatliche Prüfung und Bachelorprüfung (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)'
+                      abschlussbezeichnung: 
+                        type: string
+                        example: 'Physiotherapeut(in) und Bachelor of Science - Physiotherapie (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)''
+                      foerderung: 
+                        type: string
+                        example: Eine Förderung nach BAföG ist möglich.
+                      zugang: 
+                        type: string
+                        example: '<h4>Alter</h4><p>Mindestalter: 17 Jahre</p>'
+                      zielgruppe: 
+                        type: string
+                      anrechnung: 
+                        type: string
+                        example: Gemäß den geltenden Rechtsgrundlagen
+                      berechtigungen: 
+                        type: string
+                      zusatzqualifikationen: 
+                        type: string
+                      link: 
+                        type: string
+                      bildungsanbieter:
+                        type: object
+                        properties:
+                          id: 
+                            type: integer
+                            example: 3264
+                          name: 
                             type: string
-                            example: 'Physiotherapeut(in) und Bachelor of Science - Physiotherapie (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)''
-                        foerderung: 
+                            example: Musteranbieter
+                          telefonVorwahl: 
                             type: string
-                            example: Eine Förderung nach BAföG ist möglich.
-                        zugang: 
+                            example: '09128'
+                          telefonDurchwahl: 
+                            type: integer 
+                            example: '123456789'
+                          mobilVorwahl: 
                             type: string
-                            example: '<h4>Alter</h4><p>Mindestalter: 17 Jahre</p>'
-                        zielgruppe: 
+                          mobilDurchwahl: 
+                            type: integer
+                          faxVorwahl: 
                             type: string
-                        anrechnung: 
+                            example: '0621'
+                          faxDurchwahl: 
+                            type: integer
+                            example: '68102590'
+                          homepage: 
                             type: string
-                            example: Gemäß den geltenden Rechtsgrundlagen
-                        berechtigungen: 
+                            example: 'www.anbieterhomepage.de'
+                          email: 
                             type: string
-                        zusatzqualifikationen: 
-                            type: string
-                        link: 
-                            type: string
-                        bildungsanbieter:
-                            id: 
-                              type: integer
-                              example: 3264
-                            name: 
-                              type: string
-                              example: Musteranbieter
-                            telefonVorwahl: 
-                              type: string
-                              example: '09128'
-                            telefonDurchwahl: 
-                              type: integer 
-                              example: '123456789'
-                            mobilVorwahl: 
-                              type: string
-                            mobilDurchwahl: 
-                              type: integer
-                            faxVorwahl: 
-                              type: string
-                              example: '0621'
-                            faxDurchwahl: 
-                              type: integer
-                              example: '68102590'
-                            homepage: 
-                              type: string
-                              example: 'www.anbieterhomepage.de'
-                            email: 
-                              type: string
-                              example: max.mustermann@beispiel.de
-                            adresse:
-                              type: object
-                              properties: 
-                                id: 
-                                  type: integer
-                                  example: 164213
+                            example: max.mustermann@beispiel.de
+                          adresse:
+                            type: object
+                            properties: 
+                              id: 
+                                type: integer
+                                example: 164213
                               bezeichnung: 
-                                  type: string
+                                type: string
                               strasse: 
-                                  type: string
-                                  example: Ludwig-Guttmann-Str. 13
+                                type: string
+                                example: Ludwig-Guttmann-Str. 13
                               ortStrasse:
                                 type: object
                                 properties: 
@@ -308,24 +312,24 @@ components:
                                       lon: 
                                         type: number
                                         example: 10.4478
-                                land:
-                                  type: object
-                                  properties:
-                                    id: 
-                                      type: integer
-                                      example: 11
-                                    name: 
-                                      type: string
-                                      example: Rheinland-Pfalz
-                                    laenderCode: 
-                                      type: string
-                                      example: D
-                                    bundeslandCode: 
-                                      type: string
-                                      example: RPF
-                                    code: 
-                                      type: string
-                                      example: RPF
+                                  land:
+                                    type: object
+                                    properties:
+                                      id: 
+                                        type: integer
+                                        example: 11
+                                      name: 
+                                        type: string
+                                        example: Rheinland-Pfalz
+                                      laenderCode: 
+                                        type: string
+                                        example: D
+                                      bundeslandCode: 
+                                        type: string
+                                        example: RPF
+                                      code: 
+                                        type: string
+                                        example: RPF
                               postfach: 
                                 type: integer
                                 example: '250362'
@@ -381,7 +385,7 @@ components:
                                 example: Oggersheim
                               hinweise: 
                                 type: string
-                            logo:
+                          logo:
                             type: object
                             properties:
                               id: 
@@ -390,47 +394,47 @@ components:
                               url: 
                                 type: string
                                 example: "https://rest.arbeitsagentur.de/infosysbub/kursnet-rest/ct/v1/bildungsanbieter/3264/logos/16322"
-                        bildungsart:
-                          type: object
-                          properties:
-                            id: 
-                              type: string
-                              example: 102
-                            bezeichnung: 
-                              type: string
-                              example: Berufsausbildung
-                        systematiken:
-                          type: array
-                          items: 
-                            dkzId: 
-                              type: integer
-                              example: 8750
-                            codeNr: 
-                              type: string
-                              example: B 81713-901
-                            kurzbezeichnung: 
-                              type: string
-                        schulart:
-                          type: object
-                          properties:
-                            id: 
-                              type: integer 
-                              example: 102
-                            bezeichnung: 
-                              type: string
-                              example: Berufsbildende Schule/Einrichtung
-                        behinderungen: 
-                          type: array
-                        zertifizierer: 
-                          type: array
-                        traeger: 
-                          type: string
-                  suchworte:
-                    type: array
-                    items:
-                      suchwort: 
+                      bildungsart:
+                        type: object
+                        properties:
+                          id: 
+                            type: string
+                            example: 102
+                          bezeichnung: 
+                            type: string
+                            example: Berufsausbildung
+                      systematiken:
+                        type: array
+                        items: 
+                          dkzId: 
+                            type: integer
+                            example: 8750
+                          codeNr: 
+                            type: string
+                            example: B 81713-901
+                          kurzbezeichnung: 
+                            type: string
+                      schulart:
+                        type: object
+                        properties:
+                          id: 
+                            type: integer 
+                            example: 102
+                          bezeichnung: 
+                            type: string
+                            example: Berufsbildende Schule/Einrichtung
+                      behinderungen: 
+                        type: array
+                      zertifizierer: 
+                        type: array
+                      traeger: 
                         type: string
-                        example: Bachelor                        
+                      suchworte:
+                        type: array
+                        items:
+                          suchwort: 
+                            type: string
+                            example: Bachelor                        
                   adresse:
                     type: object
                     properties:
@@ -547,10 +551,9 @@ components:
                     type: integer
                     example: 1639436400000
                   veranstaltungsablaeufe: 
-                    type: string
+                    type: array
                   abstaende: 
-                    type: string                      
-                  
+                    type: array                      
         _links:
           type: object
           properties: 
