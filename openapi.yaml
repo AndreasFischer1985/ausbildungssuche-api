@@ -257,7 +257,7 @@ components:
                             example: '09128'
                           telefonDurchwahl: 
                             type: integer 
-                            example: '123456789'
+                            example: 123456789
                           mobilVorwahl: 
                             type: string
                           mobilDurchwahl: 
@@ -267,7 +267,7 @@ components:
                             example: '0621'
                           faxDurchwahl: 
                             type: integer
-                            example: '68102590'
+                            example: 68102590
                           homepage: 
                             type: string
                             example: 'www.anbieterhomepage.de'
@@ -293,7 +293,7 @@ components:
                                     example: 29492
                                   plz: 
                                     type: integer
-                                    example: '67071'
+                                    example: 67071
                                   name: 
                                     type: string
                                     example: Ludwigshafen am Rhein
@@ -332,7 +332,7 @@ components:
                                         example: RPF
                               postfach: 
                                 type: integer
-                                example: '250362'
+                                example: 250362
                               ortPostfach:
                                 type: object
                                 properties:
@@ -341,7 +341,7 @@ components:
                                     example: 29519
                                   plz: 
                                     type: integer
-                                    example: '67035'
+                                    example: 67035
                                   name: 
                                     type: string
                                     example: Ludwigshafen
@@ -398,7 +398,7 @@ components:
                         type: object
                         properties:
                           id: 
-                            type: string
+                            type: integer
                             example: 102
                           bezeichnung: 
                             type: string
@@ -463,7 +463,7 @@ components:
                             example: 29492
                           plz: 
                             type: integer
-                            example: '67071'
+                            example: 67071
                           name: 
                             type: string
                             example: Ludwigshafen am Rhein
@@ -502,7 +502,7 @@ components:
                                 example: RPF
                       postfach: 
                         type: integer
-                        example: '250362'
+                        example: 250362
                       ortPostfach: 
                         type: string
                       dienstleistungen: 
@@ -549,11 +549,11 @@ components:
                     type: string
                     example: Landesamt für Soziales, Jugend und Versorgung, München
                   eigeneAngebotsnummer: 
-                    type: string                    
+                    type: integer                    
                   teilnehmerMin: 
-                    type: string                    
+                    type: integer                    
                   teilnehmerMax: 
-                    type: string
+                    type: integer
                     example: 26
                   aktualisierungsdatum: 
                     type: integer
