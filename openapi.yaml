@@ -225,7 +225,7 @@ components:
                         example: 'Staatliche Prüfung und Bachelorprüfung (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)'
                       abschlussbezeichnung: 
                         type: string
-                        example: 'Physiotherapeut(in) und Bachelor of Science - Physiotherapie (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)''
+                        example: 'Physiotherapeut(in) und Bachelor of Science - Physiotherapie (Hochschule Reutlingen / Eberhard Karls Universität Tübingen)'
                       foerderung: 
                         type: string
                         example: Eine Förderung nach BAföG ist möglich.
@@ -406,14 +406,16 @@ components:
                       systematiken:
                         type: array
                         items: 
-                          dkzId: 
-                            type: integer
-                            example: 8750
-                          codeNr: 
-                            type: string
-                            example: B 81713-901
-                          kurzbezeichnung: 
-                            type: string
+                          type: object
+                          properties:
+                            dkzId: 
+                              type: integer
+                              example: 8750
+                            codeNr: 
+                              type: string
+                              example: B 81713-901
+                            kurzbezeichnung: 
+                              type: string
                       schulart:
                         type: object
                         properties:
@@ -425,16 +427,22 @@ components:
                             example: Berufsbildende Schule/Einrichtung
                       behinderungen: 
                         type: array
+                        items:
+                          type: string
                       zertifizierer: 
                         type: array
+                        items:
+                          type: string                        
                       traeger: 
                         type: string
                       suchworte:
                         type: array
                         items:
-                          suchwort: 
-                            type: string
-                            example: Bachelor                        
+                          type: object
+                          properties:
+                            suchwort: 
+                              type: string
+                              example: Bachelor                        
                   adresse:
                     type: object
                     properties:
@@ -539,7 +547,7 @@ components:
                     example: '<h4>zum Beginntermin</h4><p>Jährlich Anfang November<br/></p><h4>zu Termin und Dauer</h4><p>Anmeldung fortlaufend möglich</p>'
                   pruefendeStelle: 
                     type: string
-                    string: Landesamt für Soziales, Jugend und Versorgung, München
+                    example: Landesamt für Soziales, Jugend und Versorgung, München
                   eigeneAngebotsnummer: 
                     type: string                    
                   teilnehmerMin: 
@@ -552,8 +560,12 @@ components:
                     example: 1639436400000
                   veranstaltungsablaeufe: 
                     type: array
+                    items:
+                      type: string
                   abstaende: 
-                    type: array                      
+                    type: array   
+                    items:
+                      type: string
         _links:
           type: object
           properties: 
@@ -5201,6 +5213,8 @@ components:
                       type: integer
                       example: 101664
                 '1':
+                  type: object
+                  properties:   
                     id: 
                       type: integer
                       example: 1
@@ -5211,6 +5225,8 @@ components:
                       type: integer
                       example: 13163
                 '2':
+                  type: object
+                  properties:                   
                     id:
                       type: integer
                       example: 2
@@ -5221,6 +5237,8 @@ components:
                       type: integer
                       example: 12453
                 '101':
+                  type: object
+                  properties:                   
                     id:
                       type: integer
                       example: 101
@@ -5231,6 +5249,8 @@ components:
                       type: integer
                       example: 2106
                 '102':
+                  type: object
+                  properties:                   
                     id:
                       type: integer
                       example: 102
@@ -5241,6 +5261,8 @@ components:
                       type: integer
                       example: 10929
                 '103':
+                  type: object
+                  properties:                   
                     id:
                       type: integer
                       example: 103
@@ -5251,6 +5273,8 @@ components:
                       type: integer
                       example: 5033
                 '104':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 104
@@ -5261,6 +5285,8 @@ components:
                       type: integer
                       example: 2051
                 '105':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 105
@@ -5271,6 +5297,8 @@ components:
                       type: integer
                       example: 1127
                 '106':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 106
@@ -5281,6 +5309,8 @@ components:
                       type: integer
                       example: 1132
                 '107':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 107
@@ -5291,6 +5321,8 @@ components:
                       type: integer
                       example: 3273
                 '108':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 108
@@ -5301,6 +5333,8 @@ components:
                       type: integer
                       example: 3999
                 '109':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 109
@@ -5311,6 +5345,8 @@ components:
                       type: integer
                       example: 2205
                 '110':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 110
@@ -5321,6 +5357,8 @@ components:
                       type: integer
                       example: 1312
                 '111':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 111
@@ -5331,6 +5369,8 @@ components:
                       type: integer
                       example: 227
                 '112':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 112
@@ -5341,6 +5381,8 @@ components:
                       type: integer
                       example: 142
                 '113':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 113
@@ -5351,6 +5393,8 @@ components:
                       type: integer
                       example: 2106
                 '201':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 201
@@ -5361,6 +5405,8 @@ components:
                       type: integer
                       example: 221
                 '202':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 202
@@ -5371,6 +5417,8 @@ components:
                       type: integer
                       example: 370
                 '203':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 203
@@ -5381,6 +5429,8 @@ components:
                       type: integer
                       example: 46
                 '204':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 204
@@ -5391,6 +5441,8 @@ components:
                       type: integer
                       example: 32
                 '205':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 205
@@ -5401,6 +5453,8 @@ components:
                       type: integer
                       example: 6
                 '206':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 206
@@ -5411,6 +5465,8 @@ components:
                       type: integer
                       example: 9
                 '207':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 207
@@ -5421,6 +5477,8 @@ components:
                       type: integer
                       example: 77
                 '208':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 208
@@ -5431,6 +5489,8 @@ components:
                       type: integer
                       example: 47
                 '209':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 209
@@ -5441,14 +5501,20 @@ components:
                       type: integer
                       example: 21
                 '210':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 210
                     name:
                       type: string
                       example: Oktober 2023
-                    anzahl: 16
+                    anzahl: 
+                      type: integer
+                      example: 16
                 '211':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 211
@@ -5459,6 +5525,8 @@ components:
                       type: integer
                       example: 14
                 '212':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 212
@@ -5469,6 +5537,8 @@ components:
                       type: integer
                       example: 2
                 '301':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 301
@@ -5479,6 +5549,8 @@ components:
                       type: integer
                       example: 2
                 '302':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 302
@@ -5489,6 +5561,8 @@ components:
                       type: integer
                       example: 0
                 '303':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 303
@@ -5499,6 +5573,8 @@ components:
                       type: integer
                       example: 0
                 '304':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 304
@@ -5509,6 +5585,8 @@ components:
                       type: integer
                       example: 0
                 '305':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 305
@@ -5519,6 +5597,8 @@ components:
                       type: integer
                       example: 0
                 '306':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 306
@@ -5529,6 +5609,8 @@ components:
                       type: integer
                       example: 0
                 '307':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 307
@@ -5539,6 +5621,8 @@ components:
                       type: integer
                       example: 3
                 '308':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 308
@@ -5549,6 +5633,8 @@ components:
                       type: integer
                       example: 1
                 '309':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 309
@@ -5559,6 +5645,8 @@ components:
                       type: integer
                       example: 1
                 '310':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 310
@@ -5569,6 +5657,8 @@ components:
                       type: integer
                       example: 0
                 '311':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 311
@@ -5579,6 +5669,8 @@ components:
                       type: integer
                       example: 0
                 '312':
+                  type: object
+                  properties:  
                     id:
                       type: integer
                       example: 312
