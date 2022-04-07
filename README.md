@@ -29,7 +29,10 @@ Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagen
 **URL:** https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot
 	
 
-Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen get Parametern zu filtern:
+Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen GET-Parametern zu filtern:
+
+
+### Filter
 
 
 **Parameter:** *ids*  (Optional)
@@ -44,10 +47,8 @@ ID für Orte (z.B. 38450 für den Ort Feucht). Mehrere Komma-getrennte Angaben m
 
 **Parameter:** *page* (Optional)
 
-Seite…
+Seite (beginnend mit 0).
 
-
-### Filter
 
 **Parameter:** *uk* (Optional)
 - Bundesweit
