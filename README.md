@@ -29,10 +29,19 @@ Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagen
 **URL:** https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot
 	
 
-Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen GET-Parametern zu filtern:
+Die Ausbildungssuche ermöglicht verfügbare Angebote mit dem Ziel einer Berufsausbildung, Schulabschluss, Ausbildungsvorbereitung oder -begleitung mit verschiedenen GET-Parametern zu filtern:
 
 
 ### Filter
+
+
+**Parameter:** *sty*  (Optional)
+- 0
+- 1
+- 2
+- 3
+
+sty: 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen.
 
 
 **Parameter:** *ids*  (Optional)
