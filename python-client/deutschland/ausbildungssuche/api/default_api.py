@@ -48,6 +48,7 @@ class DefaultApi(object):
             },
             params_map={
                 "all": [
+                    "sty",
                     "ids",
                     "orte",
                     "page",
@@ -62,6 +63,7 @@ class DefaultApi(object):
                 "required": [],
                 "nullable": [],
                 "enum": [
+                    "sty",
                     "uk",
                     "re",
                     "bart",
@@ -73,6 +75,7 @@ class DefaultApi(object):
             root_map={
                 "validations": {},
                 "allowed_values": {
+                    ("sty",): {"0": 0, "1": 1, "2": 2, "3": 3},
                     ("uk",): {
                         "BUNDESWEIT": "Bundesweit",
                         "25": "25",
@@ -118,6 +121,7 @@ class DefaultApi(object):
                     },
                 },
                 "openapi_types": {
+                    "sty": (int,),
                     "ids": (int,),
                     "orte": (int,),
                     "page": (int,),
@@ -130,6 +134,7 @@ class DefaultApi(object):
                     "bg": (bool,),
                 },
                 "attribute_map": {
+                    "sty": "sty",
                     "ids": "ids",
                     "orte": "orte",
                     "page": "page",
@@ -142,6 +147,7 @@ class DefaultApi(object):
                     "bg": "bg",
                 },
                 "location_map": {
+                    "sty": "query",
                     "ids": "query",
                     "orte": "query",
                     "page": "query",
@@ -165,7 +171,7 @@ class DefaultApi(object):
     def ausbildungssuche(self, **kwargs):
         """Ausbildungssuche  # noqa: E501
 
-        Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen GET-Parametern zu filtern.  # noqa: E501
+        Die Ausbildungssuche ermöglicht verfügbare Angebote mit dem Ziel einer Berufsausbildung, Schulabschluss, Ausbildungsvorbereitung oder -begleitung mit verschiedenen GET-Parametern zu filtern.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -174,6 +180,7 @@ class DefaultApi(object):
 
 
         Keyword Args:
+            sty (int): sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen.. [optional]
             ids (int): Berufs-ID einer Berufsbezeichnung. Mehrere Komma-getrennte Angaben möglich.. [optional]
             orte (int): ID eines Ortes. Mehrere Komma-getrennte Angaben möglich.. [optional]
             page (int): Ergebnissseite. [optional]
