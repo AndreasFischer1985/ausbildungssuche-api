@@ -1,5 +1,22 @@
+#----------------
+# Simple Example
+#----------------
 install.packages(c("devtools","rjson","httr"))
 devtools::install_github("AndreasFischer1985/qqBaseX")
+clientId="1c852184-1944-4a9e-a093-5cc078981294"
+clientSecret="777f9915-9f0d-4982-9c33-07b5810a3e79"
+postData=list( "grant_type"="client_credentials","client_id"=clientId,"client_secret"=clientSecret) 
+token_request=httr::POST(
+        url="https://rest.arbeitsagentur.de/oauth/gettoken_cc",
+        body=postData,encode="form",
+        config=httr::config(connecttimeout=60))
+token=(httr::content(token_request, as='parsed')$access_token)
+url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?ids=2927"
+data_request=httr::GET(url=url, httr::add_headers(.headers=c("OAuthAccessToken"=token)),
+        config=httr::config(connecttimeout=60))
+data_request
+data=rawToChar(httr::content(data_request))
+
 
 #------------------------------------------------------------------
 # Get clientID & clientSecret from https://web.arbeitsagentur.de/ausbildungssuche/berufsausbildung-suche
