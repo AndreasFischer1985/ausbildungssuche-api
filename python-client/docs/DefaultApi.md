@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Ausbildungssuche
 
-Die Ausbildungssuche ermöglicht verfügbare Ausbildungsangebote mit verschiedenen GET-Parametern zu filtern.
+Die Ausbildungssuche ermöglicht verfügbare Angebote mit dem Ziel einer Berufsausbildung, Schulabschluss, Ausbildungsvorbereitung oder -begleitung mit verschiedenen GET-Parametern zu filtern.
 
 ### Example
 
@@ -45,6 +45,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with ausbildungssuche.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
+    sty = 0 # int | sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen. (optional)
     ids = 2927 # int | Berufs-ID einer Berufsbezeichnung. Mehrere Komma-getrennte Angaben möglich. (optional)
     orte = 38450 # int | ID eines Ortes. Mehrere Komma-getrennte Angaben möglich. (optional)
     page = 0 # int | Ergebnissseite (optional)
@@ -60,7 +61,7 @@ with ausbildungssuche.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # Ausbildungssuche
-        api_response = api_instance.ausbildungssuche(ids=ids, orte=orte, page=page, uk=uk, re=re, bart=bart, ityp=ityp, bt=bt, ban=ban, bg=bg)
+        api_response = api_instance.ausbildungssuche(sty=sty, ids=ids, orte=orte, page=page, uk=uk, re=re, bart=bart, ityp=ityp, bt=bt, ban=ban, bg=bg)
         pprint(api_response)
     except ausbildungssuche.ApiException as e:
         print("Exception when calling DefaultApi->ausbildungssuche: %s\n" % e)
@@ -71,6 +72,7 @@ with ausbildungssuche.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **sty** | **int**| sty - 0&#x3D;Berufsausbildung; 1&#x3D;Schulabschluss; 2&#x3D;Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3&#x3D;Begleitende Hilfen. | [optional]
  **ids** | **int**| Berufs-ID einer Berufsbezeichnung. Mehrere Komma-getrennte Angaben möglich. | [optional]
  **orte** | **int**| ID eines Ortes. Mehrere Komma-getrennte Angaben möglich. | [optional]
  **page** | **int**| Ergebnissseite | [optional]
