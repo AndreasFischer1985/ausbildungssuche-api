@@ -108,11 +108,12 @@ Beginntermin: 2=frühere Termine, 101=Januar des Folgejahres, 102=Februar des Fo
 
 
 **Parameter:** *bart* (Optional)
+- 101
 - 102
 - 105
 - 109
 
-Ausbildungstyp: 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
+Ausbildungstyp: 101=Teilqualifizierung, 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
 
 
 **Parameter:** *ityp* (Optional)
