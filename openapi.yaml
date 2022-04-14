@@ -118,11 +118,12 @@ paths:
           schema:
             type: integer
             enum:
+                - 101
                 - 102
                 - 105
                 - 109
           example: 102
-          description: Ausbildungstyp - 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
+          description: Ausbildungstyp - 101=Teilqualifizierung, 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
           required: false
 
         - in: query
