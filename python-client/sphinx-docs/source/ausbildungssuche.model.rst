@@ -3540,154 +3540,154 @@ ausbildungssuche.model.response\_embedded module
    :undoc-members:
    :show-inheritance:
 
-ausbildungssuche.model.response\_embedded\_adresse module
----------------------------------------------------------
+ausbildungssuche.model.response\_embedded\_termine\_inner module
+----------------------------------------------------------------
 
-.. automodule:: ausbildungssuche.model.response_embedded_adresse
+.. automodule:: ausbildungssuche.model.response_embedded_termine_inner
    :members:
    :undoc-members:
    :show-inheritance:
 
-ausbildungssuche.model.response\_embedded\_adresse\_ort\_strasse module
+ausbildungssuche.model.response\_embedded\_termine\_items\_adresse module
+-------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_adresse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_adresse\_ort\_strasse module
+---------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_adresse_ort_strasse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_adresse\_ort\_strasse\_koordinaten module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_adresse_ort_strasse_koordinaten
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot module
+-------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse\_ort\_postfach module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_postfach
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse\_ort\_postfach\_koordinaten module
+--------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_postfach_koordinaten
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse\_ort\_strasse module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse\_ort\_strasse\_koordinaten module
+-------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse_koordinaten
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_adresse\_ort\_strasse\_land module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse_land
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsanbieter\_logo module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_logo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_bildungsart module
+--------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsart
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_schulart module
+-----------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_schulart
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_suchworte\_inner module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_suchworte_inner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_angebot\_systematiken\_inner module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_angebot_systematiken_inner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ausbildungssuche.model.response\_embedded\_termine\_items\_dauer module
 -----------------------------------------------------------------------
 
-.. automodule:: ausbildungssuche.model.response_embedded_adresse_ort_strasse
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_dauer
    :members:
    :undoc-members:
    :show-inheritance:
 
-ausbildungssuche.model.response\_embedded\_adresse\_ort\_strasse\_koordinaten module
-------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_adresse_ort_strasse_koordinaten
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot module
----------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter module
----------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse module
-------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse\_ort\_postfach module
----------------------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse_ort_postfach
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse\_ort\_postfach\_koordinaten module
-----------------------------------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse_ort_postfach_koordinaten
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse\_ort\_strasse module
---------------------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse_ort_strasse
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse\_ort\_strasse\_koordinaten module
----------------------------------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse_ort_strasse_koordinaten
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_adresse\_ort\_strasse\_land module
---------------------------------------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_adresse_ort_strasse_land
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsanbieter\_logo module
+ausbildungssuche.model.response\_embedded\_termine\_items\_unterrichtsform module
 ---------------------------------------------------------------------------------
 
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsanbieter_logo
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_bildungsart module
-----------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_bildungsart
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_schulart module
--------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_schulart
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_suchworte module
---------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_suchworte
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_angebot\_systematiken module
------------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_angebot_systematiken
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_dauer module
--------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_dauer
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_termine module
----------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_termine
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-ausbildungssuche.model.response\_embedded\_unterrichtsform module
------------------------------------------------------------------
-
-.. automodule:: ausbildungssuche.model.response_embedded_unterrichtsform
+.. automodule:: ausbildungssuche.model.response_embedded_termine_items_unterrichtsform
    :members:
    :undoc-members:
    :show-inheritance:
