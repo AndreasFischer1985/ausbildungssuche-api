@@ -4,7 +4,7 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 
 ## Authentifizierung
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
-Client Credentials sind, wie beispielsweise einem GET-request an https://web.arbeitsagentur.de/ausbildungssuche/berufsausbildung-suche zu entnehmen ist, folgende:
+Client Credentials sind, wie beispielsweise einem GET-request an https://web.arbeitsagentur.de/ausbildungssuche/berufsausbildung-suche zu entnehmen ist (oder an https://web.arbeitsagentur.de/ausbildungssuche/schulabschluss-suche, an https://web.arbeitsagentur.de/ausbildungssuche/vorbereitende-hilfen-suche, oder an https://web.arbeitsagentur.de/ausbildungssuche/begleitende-hilfen-suche), folgende:
 
 **ClientID:** 1c852184-1944-4a9e-a093-5cc078981294
 
@@ -108,11 +108,12 @@ Beginntermin: 2=frühere Termine, 101=Januar des Folgejahres, 102=Februar des Fo
 
 
 **Parameter:** *bart* (Optional)
+- 101
 - 102
 - 105
 - 109
 
-Ausbildungstyp: 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
+Ausbildungstyp: 101=Teilqualifizierung, 102=Berufsausbildung, 105=Abschluss nachholen, 109=Umschulung
 
 
 **Parameter:** *ityp* (Optional)
