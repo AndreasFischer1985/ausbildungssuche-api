@@ -1334,59 +1334,59 @@ from deutschland.ausbildungssuche.model.response_embedded import ResponseEmbedde
 from deutschland.ausbildungssuche.model.response_embedded_termine_inner import (
     ResponseEmbeddedTermineInner,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_adresse import (
-    ResponseEmbeddedTermineItemsAdresse,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse import (
+    ResponseEmbeddedTermineInnerAdresse,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_adresse_ort_strasse import (
-    ResponseEmbeddedTermineItemsAdresseOrtStrasse,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse_ort_strasse import (
+    ResponseEmbeddedTermineInnerAdresseOrtStrasse,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_adresse_ort_strasse_koordinaten import (
-    ResponseEmbeddedTermineItemsAdresseOrtStrasseKoordinaten,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse_ort_strasse_koordinaten import (
+    ResponseEmbeddedTermineInnerAdresseOrtStrasseKoordinaten,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot import (
-    ResponseEmbeddedTermineItemsAngebot,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot import (
+    ResponseEmbeddedTermineInnerAngebot,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieter,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieter,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresse,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresse,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_postfach import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresseOrtPostfach,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse_ort_postfach import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresseOrtPostfach,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_postfach_koordinaten import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresseOrtPostfachKoordinaten,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse_ort_postfach_koordinaten import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresseOrtPostfachKoordinaten,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresseOrtStrasse,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse_ort_strasse import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresseOrtStrasse,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse_koordinaten import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresseOrtStrasseKoordinaten,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse_ort_strasse_koordinaten import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresseOrtStrasseKoordinaten,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_adresse_ort_strasse_land import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterAdresseOrtStrasseLand,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_adresse_ort_strasse_land import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterAdresseOrtStrasseLand,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsanbieter_logo import (
-    ResponseEmbeddedTermineItemsAngebotBildungsanbieterLogo,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsanbieter_logo import (
+    ResponseEmbeddedTermineInnerAngebotBildungsanbieterLogo,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_bildungsart import (
-    ResponseEmbeddedTermineItemsAngebotBildungsart,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_bildungsart import (
+    ResponseEmbeddedTermineInnerAngebotBildungsart,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_schulart import (
-    ResponseEmbeddedTermineItemsAngebotSchulart,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_schulart import (
+    ResponseEmbeddedTermineInnerAngebotSchulart,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_suchworte_inner import (
-    ResponseEmbeddedTermineItemsAngebotSuchworteInner,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_suchworte_inner import (
+    ResponseEmbeddedTermineInnerAngebotSuchworteInner,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot_systematiken_inner import (
-    ResponseEmbeddedTermineItemsAngebotSystematikenInner,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot_systematiken_inner import (
+    ResponseEmbeddedTermineInnerAngebotSystematikenInner,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_dauer import (
-    ResponseEmbeddedTermineItemsDauer,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_dauer import (
+    ResponseEmbeddedTermineInnerDauer,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_unterrichtsform import (
-    ResponseEmbeddedTermineItemsUnterrichtsform,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_unterrichtsform import (
+    ResponseEmbeddedTermineInnerUnterrichtsform,
 )
 from deutschland.ausbildungssuche.model.response_links import ResponseLinks
 from deutschland.ausbildungssuche.model.response_links_first import ResponseLinksFirst

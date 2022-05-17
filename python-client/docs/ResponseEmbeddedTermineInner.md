@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**unterrichtsform** | [**ResponseEmbeddedTermineItemsUnterrichtsform**](ResponseEmbeddedTermineItemsUnterrichtsform.md) |  | [optional] 
-**dauer** | [**ResponseEmbeddedTermineItemsDauer**](ResponseEmbeddedTermineItemsDauer.md) |  | [optional] 
+**unterrichtsform** | [**ResponseEmbeddedTermineInnerUnterrichtsform**](ResponseEmbeddedTermineInnerUnterrichtsform.md) |  | [optional] 
+**dauer** | [**ResponseEmbeddedTermineInnerDauer**](ResponseEmbeddedTermineInnerDauer.md) |  | [optional] 
 **anbieterbewertung** | **str** |  | [optional] 
-**angebot** | [**ResponseEmbeddedTermineItemsAngebot**](ResponseEmbeddedTermineItemsAngebot.md) |  | [optional] 
-**adresse** | [**ResponseEmbeddedTermineItemsAdresse**](ResponseEmbeddedTermineItemsAdresse.md) |  | [optional] 
+**angebot** | [**ResponseEmbeddedTermineInnerAngebot**](ResponseEmbeddedTermineInnerAngebot.md) |  | [optional] 
+**adresse** | [**ResponseEmbeddedTermineInnerAdresse**](ResponseEmbeddedTermineInnerAdresse.md) |  | [optional] 
 **unterrichtszeiten** | **str** |  | [optional] 
 **kosten_wert** | **str** |  | [optional] 
 **kosten_waehrung** | **str** |  | [optional] 
