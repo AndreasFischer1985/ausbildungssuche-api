@@ -12,27 +12,27 @@
 import sys
 import unittest
 
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_adresse import (
-    ResponseEmbeddedTermineItemsAdresse,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse import (
+    ResponseEmbeddedTermineInnerAdresse,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_angebot import (
-    ResponseEmbeddedTermineItemsAngebot,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_angebot import (
+    ResponseEmbeddedTermineInnerAngebot,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_dauer import (
-    ResponseEmbeddedTermineItemsDauer,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_dauer import (
+    ResponseEmbeddedTermineInnerDauer,
 )
-from deutschland.ausbildungssuche.model.response_embedded_termine_items_unterrichtsform import (
-    ResponseEmbeddedTermineItemsUnterrichtsform,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_unterrichtsform import (
+    ResponseEmbeddedTermineInnerUnterrichtsform,
 )
 
 from deutschland import ausbildungssuche
 
-globals()["ResponseEmbeddedTermineItemsAdresse"] = ResponseEmbeddedTermineItemsAdresse
-globals()["ResponseEmbeddedTermineItemsAngebot"] = ResponseEmbeddedTermineItemsAngebot
-globals()["ResponseEmbeddedTermineItemsDauer"] = ResponseEmbeddedTermineItemsDauer
+globals()["ResponseEmbeddedTermineInnerAdresse"] = ResponseEmbeddedTermineInnerAdresse
+globals()["ResponseEmbeddedTermineInnerAngebot"] = ResponseEmbeddedTermineInnerAngebot
+globals()["ResponseEmbeddedTermineInnerDauer"] = ResponseEmbeddedTermineInnerDauer
 globals()[
-    "ResponseEmbeddedTermineItemsUnterrichtsform"
-] = ResponseEmbeddedTermineItemsUnterrichtsform
+    "ResponseEmbeddedTermineInnerUnterrichtsform"
+] = ResponseEmbeddedTermineInnerUnterrichtsform
 from deutschland.ausbildungssuche.model.response_embedded_termine_inner import (
     ResponseEmbeddedTermineInner,
 )
