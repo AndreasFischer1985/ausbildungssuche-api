@@ -89,7 +89,7 @@ Umkreis:  Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200
 - THÜ
 - "-"
 
-Region/Bundesland: BAW=Bade-Württemberg, BAY=Bayern, BER=Berlin, BRA=Brandenburg, BRE=Bremen, HAM=Hamburg, HES=Hessen, MBV=Mecklenburg-Vorpommern, NDS=Niedersachsen, NRW=Nordrhein-Westfalen, RPF=Rheinland-Pfalz, SAA=Saarland, SAC=Sachsen, SAN=Sachsen-Anhalt, SLH=Schleswig-Holstein, THÜ=Thüringen, -=überregional. Mehrere Komma-getrennte Angaben möglich (z.B. re=TH,BW).
+Region/Bundesland: BAW=Bade-Württemberg, BAY=Bayern, BER=Berlin, BRA=Brandenburg, BRE=Bremen, HAM=Hamburg, HES=Hessen, MBV=Mecklenburg-Vorpommern, NDS=Niedersachsen, NRW=Nordrhein-Westfalen, RPF=Rheinland-Pfalz, SAA=Saarland, SAC=Sachsen, SAN=Sachsen-Anhalt, SLH=Schleswig-Holstein, THÜ=Thüringen, -=überregional. Mehrere Komma-getrennte Angaben möglich (z.B. re=THÜ,BAW).
 
 **Parameter:** *bt* (Optional)
 - 2
