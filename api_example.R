@@ -11,11 +11,31 @@ token_request=httr::POST(
         body=postData,encode="form",
         config=httr::config(connecttimeout=60))
 token=(httr::content(token_request, as='parsed')$access_token)
-url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?ids=2927"
+url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?uk=Bundesweit&bart=101&sty=0"
 data_request=httr::GET(url=url, httr::add_headers(.headers=c("OAuthAccessToken"=token)),
         config=httr::config(connecttimeout=60))
-data_request
-data=rawToChar(httr::content(data_request))
+data=rjson::fromJSON(rawToChar(httr::content(data_request)))
+
+data$aggregations$ANZAHL_GESAMT
+data$aggregations$REGIONEN
+
+t1=print(Sys.time())
+url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0"
+completeData=lapply(sort(gsub("THÜ","TH%C3%9C",names(data$aggregations$REGIONEN)),decreasing=T),function(bl){
+        print(paste0("start with ",bl));
+	dataL=rjson::fromJSON(rawToChar(httr::content(httr::GET(url=paste0(url,"&re=",bl), 
+			httr::add_headers(.headers=c("OAuthAccessToken"=token)),
+        		config=httr::config(connecttimeout=60)))))
+	maxPage=ceiling(dataL$"aggregations"$"ANZAHL_GESAMT"$COUNT/20)
+	lapply(1:maxPage,function(i){
+       	 	print(paste0("BL=",bl,"; ",i,"/",maxPage));
+		rjson::fromJSON(rawToChar(httr::content(httr::GET(url=paste0(url,"&pg=",i,"&re=",bl), 
+			httr::add_headers(.headers=c("OAuthAccessToken"=token)),
+        		config=httr::config(connecttimeout=60)))))
+	})
+})
+t2=print(Sys.time())
+print(t2-t1)
 
 
 #------------------------------------------------------------------

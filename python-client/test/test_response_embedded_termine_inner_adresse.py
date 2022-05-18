@@ -12,18 +12,22 @@
 import sys
 import unittest
 
-from deutschland.ausbildungssuche.model.response_embedded_termine_inner import (
-    ResponseEmbeddedTermineInner,
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse_ort_strasse import (
+    ResponseEmbeddedTermineInnerAdresseOrtStrasse,
 )
 
 from deutschland import ausbildungssuche
 
-globals()["ResponseEmbeddedTermineInner"] = ResponseEmbeddedTermineInner
-from deutschland.ausbildungssuche.model.response_embedded import ResponseEmbedded
+globals()[
+    "ResponseEmbeddedTermineInnerAdresseOrtStrasse"
+] = ResponseEmbeddedTermineInnerAdresseOrtStrasse
+from deutschland.ausbildungssuche.model.response_embedded_termine_inner_adresse import (
+    ResponseEmbeddedTermineInnerAdresse,
+)
 
 
-class TestResponseEmbedded(unittest.TestCase):
-    """ResponseEmbedded unit test stubs"""
+class TestResponseEmbeddedTermineInnerAdresse(unittest.TestCase):
+    """ResponseEmbeddedTermineInnerAdresse unit test stubs"""
 
     def setUp(self):
         pass
@@ -31,10 +35,10 @@ class TestResponseEmbedded(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testResponseEmbedded(self):
-        """Test ResponseEmbedded"""
+    def testResponseEmbeddedTermineInnerAdresse(self):
+        """Test ResponseEmbeddedTermineInnerAdresse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = ResponseEmbedded()  # noqa: E501
+        # model = ResponseEmbeddedTermineInnerAdresse()  # noqa: E501
         pass
 
 
