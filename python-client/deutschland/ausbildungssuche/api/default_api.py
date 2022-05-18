@@ -85,22 +85,23 @@ class DefaultApi(object):
                         "200": "200",
                     },
                     ("re",): {
-                        "BW": "BW",
-                        "BY": "BY",
-                        "BE": "BE",
-                        "BB": "BB",
-                        "HB": "HB",
-                        "HH": "HH",
-                        "HE": "HE",
-                        "MV": "MV",
-                        "NI": "NI",
-                        "NW": "NW",
-                        "RP": "RP",
-                        "SL": "SL",
-                        "SN": "SN",
-                        "ST": "ST",
-                        "SH": "SH",
-                        "TH": "TH",
+                        "BAW": "BAW",
+                        "BAY": "BAY",
+                        "BER": "BER",
+                        "BRA": "BRA",
+                        "BRE": "BRE",
+                        "HAM": "HAM",
+                        "HES": "HES",
+                        "MBV": "MBV",
+                        "NDS": "NDS",
+                        "NRW": "NRW",
+                        "RPF": "RPF",
+                        "SAA": "SAA",
+                        "SAC": "SAC",
+                        "SAN": "SAN",
+                        "SLH": "SLH",
+                        "THÜ": "THÜ",
+                        "-": "-",
                     },
                     ("bart",): {
                         "0": 0,
@@ -196,7 +197,7 @@ class DefaultApi(object):
             orte (int): ID eines Ortes. Mehrere Komma-getrennte Angaben möglich.. [optional]
             page (int): Ergebnissseite. [optional]
             uk (str): Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.. [optional]
-            re (str): Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen. Mehrere Komma-getrennte Angaben möglich.. [optional]
+            re (str): Region/Bundesland - BAW=Bade-Württemberg, BAY=Bayern, BER=Berlin, BRA=Brandenburg, BRE=Bremen, HAM=Hamburg, HES=Hessen, MBV=Mecklenburg-Vorpommern, NDS=Niedersachsen, NRW=Nordrhein-Westfalen, RPF=Rheinland-Pfalz, SAA=Saarland, SAC=Sachsen, SAN=Sachsen-Anhalt, SLH=Schleswig-Holstein, THÜ=Thüringen, -=überregional. Mehrere Komma-getrennte Angaben möglich (z.B. re=THÜ,BAW).. [optional]
             bart (int): Ausbildungstyp - 0=Keine Zuordnung möglich, 100=Allgemeinbildung, 101=Teilqualifizierung, 102=Berufsausbildung, 103=Gesetzlich/gesetzesähnlich geregelte Fortbildung/Qualifizierung, 104=Fortbildung/Qualifizierung, 105=Abschluss nachholen, 106=Rehabilitation,  107108=Studienangebot - grundständig, 109=Umschulung. [optional]
             ityp (int): Integrationstyp - 0=Ausbildung Reha, 1=weiterbildung Reha. Mehrere Komma-getrennte Angaben möglich.. [optional]
             bt (int): Beginntermin - 2=frühere Termine, 101=Januar des Folgejahres, 102=Februar des Folgejahres, 103=März des Folgejahres, 104=April des Folgejahres, 105=Mai des Folgejahres, 106=Juni des Folgejahres, 107=Juli des Folgejahres, 108=August des Folgejahres, 109=September des Folgejahres, 110=Oktober des Folgejahres, 111=November des Folgejahres, 112=Dezember des Folgejahres. Mehrere Komma-getrennte Angaben möglich.. [optional]
