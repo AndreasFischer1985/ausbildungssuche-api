@@ -100,7 +100,7 @@ class DefaultApi(object):
                         "SAC": "SAC",
                         "SAN": "SAN",
                         "SLH": "SLH",
-                        "THÜ": "THÜ",
+                        "TH%C3%9C": "TH%C3%9C",
                         "-": "-",
                     },
                     ("bart",): {
