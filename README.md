@@ -144,16 +144,7 @@ Bildungsgutschein: true=nur Angebote mit Zulassung zur Förderung mit Bildungsgu
 ### Beispiel:
 
 ```bash
-wb=$(curl -m 60 -H "Host: rest.arbeitsagentur.de" \
--H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0" \
--H "Accept: application/json, text/plain, */*" \
--H "Accept-Language: de,en-US;q=0.7,en;q=0.3" \
--H "Accept-Encoding: gzip, deflate, br" \
--H "Origin: https://web.arbeitsagentur.de" \
--H "DNT: 1" \
--H "Connection: keep-alive" \
--H "Pragma: no-cache" \
--H "Cache-Control: no-cache" \
+wb=$(curl -m 60 \
 -H "OAuthAccessToken: $token" \
 'https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?ids=2927&bg=false&page=0')
 ```
