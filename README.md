@@ -15,9 +15,9 @@ Client Credentials sind, wie beispielsweise einem GET-request an https://web.arb
 Die Credentials sind im body POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
 
 ```bash
-curl \
+token=$(curl \
 -d "client_id=1c852184-1944-4a9e-a093-5cc078981294&client_secret=777f9915-9f0d-4982-9c33-07b5810a3e79&grant_type=client_credentials" \
--X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc'
+-X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' | cut -d '"' -f 4)
 ```
 
 Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot im header als 'OAuthAccessToken' inkludiert werden.
