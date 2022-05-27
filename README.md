@@ -146,5 +146,5 @@ Bildungsgutschein: true=nur Angebote mit Zulassung zur Förderung mit Bildungsgu
 ```bash
 wb=$(curl -m 60 \
 -H "OAuthAccessToken: $token" \
-'https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?ids=2927&bg=false&page=0')
+'https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0')
 ```
