@@ -29,9 +29,9 @@ completeData=lapply(sort(gsub("THÜ","TH%C3%9C",names(data$aggregations$REGIONEN
 			httr::add_headers(.headers=c("OAuthAccessToken"=token)),
         		config=httr::config(connecttimeout=60)))))
 	maxPage=ceiling(dataL$"aggregations"$"ANZAHL_GESAMT"$COUNT/20)
-	lapply(1:maxPage,function(i){
+	lapply(0:maxPage,function(i){
        	 	print(paste0("BL=",bl,"; ",i,"/",maxPage));
-		jsonlite::fromJSON(rawToChar(httr::content(httr::GET(url=paste0(url,"&pg=",i,"&re=",bl), 
+		jsonlite::fromJSON(rawToChar(httr::content(httr::GET(url=paste0(url,"&page=",i,"&re=",bl), 
 			httr::add_headers(.headers=c("OAuthAccessToken"=token)),
         		config=httr::config(connecttimeout=60)))))
 	})
