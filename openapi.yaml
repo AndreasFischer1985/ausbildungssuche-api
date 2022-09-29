@@ -45,7 +45,8 @@ paths:
                 - 1
                 - 2
                 - 3
-          description: sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen.
+                - 4
+          description: sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen; 4=Alle.
           example: 0
           required: false
 

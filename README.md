@@ -39,8 +39,9 @@ Die Ausbildungssuche ermöglicht verfügbare Angebote mit dem Ziel einer Berufsa
 - 1
 - 2
 - 3
+- 4
 
-sty: 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen.
+sty: 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen; 4=Alle.
 
 
 **Parameter:** *ids*  (Optional)
