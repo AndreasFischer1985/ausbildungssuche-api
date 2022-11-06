@@ -14,6 +14,7 @@ import sys  # noqa: F401
 
 from deutschland.ausbildungssuche.api_client import ApiClient
 from deutschland.ausbildungssuche.api_client import Endpoint as _Endpoint
+from deutschland.ausbildungssuche.model.details import Details
 from deutschland.ausbildungssuche.model.response import Response
 from deutschland.ausbildungssuche.model_utils import (  # noqa: F401
     check_allowed_values,
@@ -37,6 +38,46 @@ class DefaultApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.ausbildungsdetails_endpoint = _Endpoint(
+            settings={
+                "response_type": (Details,),
+                "auth": ["clientCredAuth"],
+                "endpoint_path": "/pc/v1/ausbildungsangebot/{id}",
+                "operation_id": "ausbildungsdetails",
+                "http_method": "GET",
+                "servers": None,
+            },
+            params_map={
+                "all": [
+                    "id",
+                ],
+                "required": [
+                    "id",
+                ],
+                "nullable": [],
+                "enum": [],
+                "validation": [],
+            },
+            root_map={
+                "validations": {},
+                "allowed_values": {},
+                "openapi_types": {
+                    "id": (int,),
+                },
+                "attribute_map": {
+                    "id": "id",
+                },
+                "location_map": {
+                    "id": "path",
+                },
+                "collection_format_map": {},
+            },
+            headers_map={
+                "accept": ["application/json"],
+                "content_type": [],
+            },
+            api_client=api_client,
+        )
         self.ausbildungssuche_endpoint = _Endpoint(
             settings={
                 "response_type": (Response,),
@@ -52,6 +93,7 @@ class DefaultApi(object):
                     "ids",
                     "orte",
                     "page",
+                    "size",
                     "uk",
                     "re",
                     "bart",
@@ -75,7 +117,7 @@ class DefaultApi(object):
             root_map={
                 "validations": {},
                 "allowed_values": {
-                    ("sty",): {"0": 0, "1": 1, "2": 2, "3": 3},
+                    ("sty",): {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4},
                     ("uk",): {
                         "BUNDESWEIT": "Bundesweit",
                         "25": "25",
@@ -137,6 +179,7 @@ class DefaultApi(object):
                     "ids": (int,),
                     "orte": (int,),
                     "page": (int,),
+                    "size": (int,),
                     "uk": (str,),
                     "re": (str,),
                     "bart": (int,),
@@ -150,6 +193,7 @@ class DefaultApi(object):
                     "ids": "ids",
                     "orte": "orte",
                     "page": "page",
+                    "size": "size",
                     "uk": "uk",
                     "re": "re",
                     "bart": "bart",
@@ -163,6 +207,7 @@ class DefaultApi(object):
                     "ids": "query",
                     "orte": "query",
                     "page": "query",
+                    "size": "query",
                     "uk": "query",
                     "re": "query",
                     "bart": "query",
@@ -180,6 +225,69 @@ class DefaultApi(object):
             api_client=api_client,
         )
 
+    def ausbildungsdetails(self, id, **kwargs):
+        """Ausbildungsdetails  # noqa: E501
+
+        Detailinformationen zu einem spezifischen Ausbildungsangebot.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.ausbildungsdetails(id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            id (int): Id eines Ausbildungsangebots
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Details
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs["async_req"] = kwargs.get("async_req", False)
+        kwargs["_return_http_data_only"] = kwargs.get("_return_http_data_only", True)
+        kwargs["_preload_content"] = kwargs.get("_preload_content", True)
+        kwargs["_request_timeout"] = kwargs.get("_request_timeout", None)
+        kwargs["_check_input_type"] = kwargs.get("_check_input_type", True)
+        kwargs["_check_return_type"] = kwargs.get("_check_return_type", True)
+        kwargs["_spec_property_naming"] = kwargs.get("_spec_property_naming", False)
+        kwargs["_content_type"] = kwargs.get("_content_type")
+        kwargs["_host_index"] = kwargs.get("_host_index")
+        kwargs["_request_auths"] = kwargs.get("_request_auths", None)
+        kwargs["id"] = id
+        return self.ausbildungsdetails_endpoint.call_with_http_info(**kwargs)
+
     def ausbildungssuche(self, **kwargs):
         """Ausbildungssuche  # noqa: E501
 
@@ -192,10 +300,11 @@ class DefaultApi(object):
 
 
         Keyword Args:
-            sty (int): sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen.. [optional]
+            sty (int): sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen; 4=Alle.. [optional]
             ids (int): Berufs-ID einer Berufsbezeichnung. Mehrere Komma-getrennte Angaben möglich.. [optional]
             orte (int): ID eines Ortes. Mehrere Komma-getrennte Angaben möglich.. [optional]
-            page (int): Ergebnissseite. [optional]
+            page (int): Seite (beginnend mit 0).. [optional]
+            size (int): Anzahl der Ergebnisse pro Seite (maximal 2000). Insgesamt werden über alle Seiten hinweg maximal 10000 Ergebnisse angezeigt.. [optional]
             uk (str): Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.. [optional]
             re (str): Region/Bundesland - BAW=Bade-Württemberg, BAY=Bayern, BER=Berlin, BRA=Brandenburg, BRE=Bremen, HAM=Hamburg, HES=Hessen, MBV=Mecklenburg-Vorpommern, NDS=Niedersachsen, NRW=Nordrhein-Westfalen, RPF=Rheinland-Pfalz, SAA=Saarland, SAC=Sachsen, SAN=Sachsen-Anhalt, SLH=Schleswig-Holstein, THÜ=Thüringen, -=überregional. Mehrere Komma-getrennte Angaben möglich (z.B. re=THÜ,BAW).. [optional]
             bart (int): Ausbildungstyp - 0=Keine Zuordnung möglich, 100=Allgemeinbildung, 101=Teilqualifizierung, 102=Berufsausbildung, 103=Gesetzlich/gesetzesähnlich geregelte Fortbildung/Qualifizierung, 104=Fortbildung/Qualifizierung, 105=Abschluss nachholen, 106=Rehabilitation,  107108=Studienangebot - grundständig, 109=Umschulung. [optional]

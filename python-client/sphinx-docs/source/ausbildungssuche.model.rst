@@ -4,6 +4,14 @@ ausbildungssuche.model package
 Submodules
 ----------
 
+ausbildungssuche.model.details module
+-------------------------------------
+
+.. automodule:: ausbildungssuche.model.details
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 ausbildungssuche.model.response module
 --------------------------------------
 

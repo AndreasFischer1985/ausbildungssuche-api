@@ -59,6 +59,11 @@ ID für Orte (z.B. 38450 für den Ort Feucht). Mehrere Komma-getrennte Angaben m
 Seite (beginnend mit 0).
 
 
+**Parameter:** *size* (Optional)
+
+Anzahl der Ergebnisse pro Seite (maximal 2000). Insgesamt werden über alle Seiten hinweg maximal 10000 Ergebnisse angezeigt.
+
+
 **Parameter:** *uk* (Optional)
 - Bundesweit
 - 25

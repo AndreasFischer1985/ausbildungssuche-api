@@ -25,6 +25,13 @@ class TestDefaultApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_ausbildungsdetails(self):
+        """Test case for ausbildungsdetails
+
+        Ausbildungsdetails  # noqa: E501
+        """
+        pass
+
     def test_ausbildungssuche(self):
         """Test case for ausbildungssuche
 

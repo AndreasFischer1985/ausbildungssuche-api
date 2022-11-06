@@ -21,6 +21,10 @@ writeLines(jsonlite::toJSON(data$aggregations,pretty=TRUE,auto_unbox=TRUE),paste
 data$aggregations$ANZAHL_GESAMT
 data$aggregations$REGIONEN
 
+#--------------------
+# Get data by region
+#--------------------
+
 t1=print(Sys.time())
 url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0"
 completeData=lapply(sort(gsub("THÜ","TH%C3%9C",names(data$aggregations$REGIONEN)),decreasing=T),function(bl){
@@ -39,3 +43,4 @@ completeData=lapply(sort(gsub("THÜ","TH%C3%9C",names(data$aggregations$REGIONEN
 t2=print(Sys.time())
 print(t2-t1)
 
+save.image(paste0(Sys.Date(),"_absuche_bart101_workspace.RData"))
