@@ -27,7 +27,7 @@ data$aggregations$REGIONEN
 
 t1=print(Sys.time())
 url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0"
-completeData=lapply(sort(gsub("THÜ","TH%C3%9C",names(data$aggregations$REGIONEN)),decreasing=T),function(bl){
+completeData=lapply(sort(gsub("TH.*","TH%C3%9C",names(data$aggregations$REGIONEN)),decreasing=T),function(bl){
         print(paste0("start with ",bl));
 	dataL=jsonlite::fromJSON(rawToChar(httr::content(httr::GET(url=paste0(url,"&re=",bl), 
 			httr::add_headers(.headers=c("OAuthAccessToken"=token)),
@@ -98,7 +98,7 @@ ggplot() +
                ) +
   geom_point(data=dat,
              aes(x=LON, y=LAT),  
-	     colour="green",
+	     colour="darkblue",
              alpha=.5,
              size=1.5) +
   geom_text(data=labels, 
@@ -108,13 +108,11 @@ ggplot() +
              fontface="bold",col="white")+
   coord_map() +
   theme_void() +
-  #theme(legend.position = "bottom") +
   xlab("Longitude") + ylab("Latitude") +
   labs(
 	fill="Angebote\nje Bundesland") +
-  scale_color_manual(values=c("green","red"))+
-  #scale_fill_gradient(low="darkblue", high="white")+
+  scale_fill_gradient(low= "white", high= rgb(0/255, 50/255, 100/255))+
   ggtitle('Teilqualifikationen in Deutschland',
 	subtitle =paste(dim(dat)[1],"Angebote an",length(table(paste(dat$LAT,dat$LON))),"Orten (Stand: 06.11.2022)"))
 
-
+		 
