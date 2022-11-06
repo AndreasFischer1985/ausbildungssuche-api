@@ -11,6 +11,7 @@ ausbildungssuche/apis/__init__.py
 ausbildungssuche/configuration.py
 ausbildungssuche/exceptions.py
 ausbildungssuche/model/__init__.py
+ausbildungssuche/model/details.py
 ausbildungssuche/model/response.py
 ausbildungssuche/model/response_aggregations.py
 ausbildungssuche/model/response_aggregations_anbieter.py
@@ -483,6 +484,7 @@ ausbildungssuche/models/__init__.py
 ausbildungssuche/rest.py
 create_doc.py
 docs/DefaultApi.md
+docs/Details.md
 docs/Response.md
 docs/ResponseAggregations.md
 docs/ResponseAggregationsANBIETER.md
@@ -960,6 +962,7 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_default_api.py
+test/test_details.py
 test/test_response.py
 test/test_response_aggregations.py
 test/test_response_aggregations_anbieter.py

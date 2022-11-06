@@ -9,6 +9,7 @@
 # import sys
 # sys.setrecursionlimit(n)
 
+from deutschland.ausbildungssuche.model.details import Details
 from deutschland.ausbildungssuche.model.response import Response
 from deutschland.ausbildungssuche.model.response_aggregations import (
     ResponseAggregations,

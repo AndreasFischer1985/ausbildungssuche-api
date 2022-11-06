@@ -60,6 +60,7 @@ import time
 from deutschland import ausbildungssuche
 from pprint import pprint
 from deutschland.ausbildungssuche.api import default_api
+from deutschland.ausbildungssuche.model.details import Details
 from deutschland.ausbildungssuche.model.response import Response
 # Defining the host is optional and defaults to https://rest.arbeitsagentur.de/infosysbub/absuche
 # See configuration.py for a list of all supported configuration parameters.
@@ -83,24 +84,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with ausbildungssuche.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = default_api.DefaultApi(api_client)
-    sty = 0 # int | sty - 0=Berufsausbildung; 1=Schulabschluss; 2=Vorbereitung auf Aus- und Weiterbildung oder berufliche Tätigkeit; 3=Begleitende Hilfen. (optional)
-    ids = 2927 # int | Berufs-ID einer Berufsbezeichnung. Mehrere Komma-getrennte Angaben möglich. (optional)
-    orte = 38450 # int | ID eines Ortes. Mehrere Komma-getrennte Angaben möglich. (optional)
-    page = 0 # int | Ergebnissseite (optional)
-    uk = "Bundesweit" # str | Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km. (optional)
-    re = "BAY" # str | Region/Bundesland - BAW=Bade-Württemberg, BAY=Bayern, BER=Berlin, BRA=Brandenburg, BRE=Bremen, HAM=Hamburg, HES=Hessen, MBV=Mecklenburg-Vorpommern, NDS=Niedersachsen, NRW=Nordrhein-Westfalen, RPF=Rheinland-Pfalz, SAA=Saarland, SAC=Sachsen, SAN=Sachsen-Anhalt, SLH=Schleswig-Holstein, THÜ=Thüringen, -=überregional. Mehrere Komma-getrennte Angaben möglich (z.B. re=THÜ,BAW). (optional)
-    bart = 102 # int | Ausbildungstyp - 0=Keine Zuordnung möglich, 100=Allgemeinbildung, 101=Teilqualifizierung, 102=Berufsausbildung, 103=Gesetzlich/gesetzesähnlich geregelte Fortbildung/Qualifizierung, 104=Fortbildung/Qualifizierung, 105=Abschluss nachholen, 106=Rehabilitation,  107108=Studienangebot - grundständig, 109=Umschulung (optional)
-    ityp = 0 # int | Integrationstyp - 0=Ausbildung Reha, 1=weiterbildung Reha. Mehrere Komma-getrennte Angaben möglich. (optional)
-    bt = 2 # int | Beginntermin - 2=frühere Termine, 101=Januar des Folgejahres, 102=Februar des Folgejahres, 103=März des Folgejahres, 104=April des Folgejahres, 105=Mai des Folgejahres, 106=Juni des Folgejahres, 107=Juli des Folgejahres, 108=August des Folgejahres, 109=September des Folgejahres, 110=Oktober des Folgejahres, 111=November des Folgejahres, 112=Dezember des Folgejahres. Mehrere Komma-getrennte Angaben möglich. (optional)
-    ban = 465 # int | Bildungsanbieter-ID. Mehrere Komma-getrennte Angaben möglich. (optional)
-    bg = True # bool | Bildungsgutschein - true=nur Angebote mit Zulassung zur Förderung mit Bildungsgutschein anzeigen, false=nicht nur Angebote mit Zulassung zur Förderung mit Bildungsgutschein anzeigen. (optional)
+    id = 1 # int | Id eines Ausbildungsangebots
 
     try:
-        # Ausbildungssuche
-        api_response = api_instance.ausbildungssuche(sty=sty, ids=ids, orte=orte, page=page, uk=uk, re=re, bart=bart, ityp=ityp, bt=bt, ban=ban, bg=bg)
+        # Ausbildungsdetails
+        api_response = api_instance.ausbildungsdetails(id)
         pprint(api_response)
     except ausbildungssuche.ApiException as e:
-        print("Exception when calling DefaultApi->ausbildungssuche: %s\n" % e)
+        print("Exception when calling DefaultApi->ausbildungsdetails: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -109,11 +100,13 @@ All URIs are relative to *https://rest.arbeitsagentur.de/infosysbub/absuche*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**ausbildungsdetails**](docs/DefaultApi.md#ausbildungsdetails) | **GET** /pc/v1/ausbildungsangebot/{id} | Ausbildungsdetails
 *DefaultApi* | [**ausbildungssuche**](docs/DefaultApi.md#ausbildungssuche) | **GET** /pc/v1/ausbildungsangebot | Ausbildungssuche
 
 
 ## Documentation For Models
 
+ - [Details](docs/Details.md)
  - [Response](docs/Response.md)
  - [ResponseAggregations](docs/ResponseAggregations.md)
  - [ResponseAggregationsANBIETER](docs/ResponseAggregationsANBIETER.md)

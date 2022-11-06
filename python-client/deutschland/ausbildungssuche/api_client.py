@@ -908,10 +908,10 @@ class Endpoint(object):
         Example:
 
         api_instance = DefaultApi()
-        api_instance.ausbildungssuche  # this is an instance of the class Endpoint
-        api_instance.ausbildungssuche()  # this invokes api_instance.ausbildungssuche.__call__()
+        api_instance.ausbildungsdetails  # this is an instance of the class Endpoint
+        api_instance.ausbildungsdetails()  # this invokes api_instance.ausbildungsdetails.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.ausbildungssuche.callable or self.callable in this class
+        api_instance.ausbildungsdetails.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)
