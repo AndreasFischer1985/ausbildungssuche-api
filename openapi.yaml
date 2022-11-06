@@ -70,8 +70,16 @@ paths:
           name: page
           schema:
             type: integer
-          description: Ergebnissseite
+          description: Seite (beginnend mit 0).
           example: 0
+          required: false
+
+        - in: query
+          name: size
+          schema:
+            type: integer
+          description: Anzahl der Ergebnisse pro Seite (maximal 2000). Insgesamt werden über alle Seiten hinweg maximal 10000 Ergebnisse angezeigt.
+          example: 20
           required: false
 
         - in: query
