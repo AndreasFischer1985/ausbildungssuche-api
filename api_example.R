@@ -1,6 +1,7 @@
-#----------------
+##################
 # Simple Example
-#----------------
+##################
+
 install.packages(c("devtools","jsonlite","httr"))
 devtools::install_github("AndreasFischer1985/qqBaseX")
 clientId="1c852184-1944-4a9e-a093-5cc078981294"
@@ -21,9 +22,9 @@ writeLines(jsonlite::toJSON(data$aggregations,pretty=TRUE,auto_unbox=TRUE),paste
 data$aggregations$ANZAHL_GESAMT
 data$aggregations$REGIONEN
 
-#--------------------
+######################
 # Get data by region
-#--------------------
+######################
 
 t1=print(Sys.time())
 url="https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0"
@@ -46,73 +47,90 @@ print(t2-t1)
 save.image(paste0(Sys.Date(),"_absuche_bart101_workspace.RData"))
 
 
-#---------------------
+#######################
 # Plot data by region
-#---------------------
+#######################
 
 koordinaten=sapply(1:length(completeData),function(bl)
 	sapply(1:length(completeData[[bl]]),function(page)completeData[[bl]][[page]][["_embedded"]][["termine"]][["adresse"]][["ortStrasse"]][["koordinaten"]]))
-x=do.call(rbind,lapply(koordinaten,function(x)do.call(rbind,x)))
+koordinaten=do.call(rbind,lapply(koordinaten,function(x)do.call(rbind,x)))
+
 
 library(ggplot2)
 library(raster)
+
+cc=geodata::country_codes()
+if(!exists("rasterDat"))
+  rasterDat=geodata::elevation_30s("DEU",getwd())
+terra::values(rasterDat)[terra::values(rasterDat)<0]=0
+g0=ggplot2::ggplot() +
+    tidyterra::geom_spatraster(data = rasterDat)+
+    tidyterra::scale_fill_hypso_tint_c(
+      limits = c(0,3000),
+      palette = "wiki-2.0_hypso" 
+    ) +
+    #ggplot2::labs(fill="Elevation")+
+    #ggplot2::ggtitle("Map of Germany") +
+    ggplot2::theme_minimal()
+
+dev.new();g0;
+
+
+# Data Topping 
+#-------------
+
 if(!exists("germany"))
 	germany <- raster::getData(country = "Germany", level = 1) 
-dat=data.frame(x)
+dat=data.frame(koordinaten)
 colnames(dat)=c("LAT","LON") 
-spatial_dat=dat
-coordinates(spatial_dat) <- ~LON+LAT
-proj4string(spatial_dat) <- proj4string(germany)
-spatial_dat=sp:::over(spatial_dat, germany , fn = NULL) 
-dat=dat[!is.na(spatial_dat[,"GID_0"]),] # select data of TQs in Germany
-dim(dat) #  26254 in Germany
-length(table(paste(dat$LAT,dat$LON))) # 585 different coordinates
-table(spatial_dat[,"GID_0"],useNA="always")
-sort(table(spatial_dat[,"NAME_1"],useNA="always"))
-labels=NULL 
-if(T){ # generate a data.frame for labels and aggregated data
-	labels=data.frame(coordinates(germany),germany,(table(spatial_dat[,"NAME_1"],useNA="always"))[germany$NAME_1])
-	labels$Freq[is.na(labels$Freq)]=0
-	set.seed(0)
-	#dat$LAT=jitter(dat$LAT)
-	#dat$LON=jitter(dat$LON)
-	colnames(labels)[1:2]=c("long","lat")
-	labels[,"HASC_1"]=gsub("DE.","",labels[,"HASC_1"])
-	w=which(labels[,"HASC_1"]=="BR")
-	labels[w,"lat"]=labels[w,"lat"]-0.4
-	w=which(labels[,"HASC_1"]=="HH"|labels[,"HASC_1"]=="HB"|labels[,"HASC_1"]=="BE")
-	labels[w,"lat"]=labels[w,"lat"]+0.2
-}
-if(T){ add feature to Polygon-element
-	library(dplyr)
-	germany$Freq=labels$Freq
-	gertab <- fortify(germany) 
-	gislayerdata <- mutate(as.data.frame(germany), id = rownames(data.frame(germany)) ) 
-	gertab <- inner_join(gertab, gislayerdata, "id")
-}
-dev.new();
-ggplot() +
-  geom_polygon(data=gertab,
-               aes(x=long, y=lat, group=group, fill=Freq),
-	       colour='black'
-               ) +
-  geom_point(data=dat,
-             aes(x=LON, y=LAT),  
-	     colour="darkblue",
-             alpha=.5,
-             size=1.5) +
-  geom_text(data=labels, 
-	     aes(x=long, y=lat, label=HASC_1),
-             alpha=.5, 
-	     size=3, 
-             fontface="bold",col="white")+
-  coord_map() +
-  theme_void() +
-  xlab("Longitude") + ylab("Latitude") +
-  labs(
-	fill="Angebote\nje Bundesland") +
-  scale_fill_gradient(low= "white", high= rgb(0/255, 50/255, 100/255))+
-  ggtitle('Teilqualifikationen in Deutschland',
-	subtitle =paste(dim(dat)[1],"Angebote an",length(table(paste(dat$LAT,dat$LON))),"Orten (Stand: 06.11.2022)"))
+udat=apply(dat,1,function(x)paste(x,collapse=";"))
+udat=sort(table(udat))
+udat=data.frame(
+	LAT=as.numeric(gsub(";.*","",names(udat))),
+	LON=as.numeric(gsub(".*;","",names(udat))),
+        NUM=as.numeric(udat))
+udat=udat[udat[,"LAT"]!=0&udat[,"LON"]!=0,]
+sp::coordinates(udat) <- ~LON+LAT
+sp::proj4string(udat) <- sp::proj4string(germany)
+udat=data.frame(udat,sp:::over(udat, germany , fn = NULL)) # locate udat-coordinates in Germany
+udat=udat[!is.na(udat[,"GID_0"]),] # remove udat-entries outside of Germany
+table(udat[,"GID_0"],useNA="always")
 
-		 
+germany$Freq=(table(udat[,"NAME_1"],useNA="always"))[germany$NAME_1]#
+germany$Freq[is.na(labels$Freq)]=0
+germany$Label=gsub("DE.","",labels[,"HASC_1"])
+germany$LON=sp::coordinates(germany)[,1]
+germany$LAT=sp::coordinates(germany)[,2]
+w=which(germany$Label=="BR");germany$LAT[w]=germany$LAT[w]-0.4
+w=which(germany$Label=="HH"|germany$Label=="BE");germany$LAT[w]=germany$LAT[w]+0.2
+
+#invisible(lapply(1:16,function(i){germany@polygons[[i]]@"labpt"=c(germany$LON,germany$LON)}))
+
+g1=g0+
+  ggplot2::geom_polygon(data=germany, # borders of 16 countries
+               ggplot2::aes(x=long, y=lat, group=group),
+               fill=NA,
+	       colour=rgb(1,1,1,1))+
+  ggplot2::geom_point(data=udat, # white underground for udat-entries
+             ggplot2::aes(x=LON, y=LAT,size=NUM),  
+	     colour="white",
+             alpha=1)+
+  ggplot2::geom_point(data=udat, # darkblue udat-entries
+             ggplot2::aes(x=LON, y=LAT,size=NUM),  
+	     colour="darkblue",
+             alpha=.5)+
+  ggplot2::geom_text(data=(germany@data), # country-Labels 
+	     ggplot2::aes(x=LON, y=LAT, label=Label),
+             alpha=.8, 
+	     size=3, 
+             fontface="bold",col="black")+
+  ggplot2::xlab("") + ggplot2::ylab("") +
+  ggplot2::guides(fill="none")+
+  ggplot2::labs(size="TQ-Angebote")+ 
+  ggplot2::ggtitle('Teilqualifikationen in Deutschland',
+	subtitle =paste(sum(udat[,"NUM"]),"Angebote an",dim(udat),"Orten"))
+
+dev.new();g1
+
+ggplot2::ggsave("TQMapOfGermany.png")
+
