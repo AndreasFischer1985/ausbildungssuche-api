@@ -97,8 +97,8 @@ udat=udat[!is.na(udat[,"GID_0"]),] # remove udat-entries outside of Germany
 table(udat[,"GID_0"],useNA="always")
 
 germany$Freq=(table(udat[,"NAME_1"],useNA="always"))[germany$NAME_1]#
-germany$Freq[is.na(labels$Freq)]=0
-germany$Label=gsub("DE.","",labels[,"HASC_1"])
+germany$Freq[is.na(germany$Freq)]=0
+germany$Label=gsub("DE.","",germany$HASC_1)
 germany$LON=sp::coordinates(germany)[,1]
 germany$LAT=sp::coordinates(germany)[,2]
 w=which(germany$Label=="BR");germany$LAT[w]=germany$LAT[w]-0.4
