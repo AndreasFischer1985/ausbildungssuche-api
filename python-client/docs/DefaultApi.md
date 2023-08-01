@@ -17,7 +17,7 @@ Detailinformationen zu einem spezifischen Ausbildungsangebot.
 
 ### Example
 
-* OAuth Authentication (clientCredAuth):
+* Api Key Authentication (APIKeyHeaders):
 
 ```python
 import time
@@ -36,11 +36,11 @@ configuration = ausbildungssuche.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: clientCredAuth
-configuration = ausbildungssuche.Configuration(
-    host = "https://rest.arbeitsagentur.de/infosysbub/absuche"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: APIKeyHeaders
+configuration.api_key['APIKeyHeaders'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['APIKeyHeaders'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ausbildungssuche.ApiClient(configuration) as api_client:
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[clientCredAuth](../README.md#clientCredAuth)
+[APIKeyHeaders](../README.md#APIKeyHeaders)
 
 ### HTTP request headers
 
@@ -95,7 +95,7 @@ Die Ausbildungssuche ermöglicht verfügbare Angebote mit dem Ziel einer Berufsa
 
 ### Example
 
-* OAuth Authentication (clientCredAuth):
+* Api Key Authentication (APIKeyHeaders):
 
 ```python
 import time
@@ -114,11 +114,11 @@ configuration = ausbildungssuche.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: clientCredAuth
-configuration = ausbildungssuche.Configuration(
-    host = "https://rest.arbeitsagentur.de/infosysbub/absuche"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
+# Configure API key authorization: APIKeyHeaders
+configuration.api_key['APIKeyHeaders'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['APIKeyHeaders'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with ausbildungssuche.ApiClient(configuration) as api_client:
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[clientCredAuth](../README.md#clientCredAuth)
+[APIKeyHeaders](../README.md#APIKeyHeaders)
 
 ### HTTP request headers
 
