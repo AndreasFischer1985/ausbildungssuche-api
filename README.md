@@ -3,26 +3,12 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 
 
 ## Authentifizierung
-Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
-Client Credentials sind, wie beispielsweise einem GET-request an https://web.arbeitsagentur.de/ausbildungssuche/berufsausbildung-suche zu entnehmen ist (oder an https://web.arbeitsagentur.de/ausbildungssuche/schulabschluss-suche, an https://web.arbeitsagentur.de/ausbildungssuche/vorbereitende-hilfen-suche, oder an https://web.arbeitsagentur.de/ausbildungssuche/begleitende-hilfen-suche), folgende:
 
-**client_id:** 1c852184-1944-4a9e-a093-5cc078981294
+Die Authentifizierung funktioniert über die clientId der Ausbildungssuchesuche, die einem GET-request an https://web.arbeitsagentur.de/weiterbildungssuche/suche entnommen werden kann:
 
-**client_secret:** 777f9915-9f0d-4982-9c33-07b5810a3e79
+**clientId:** infosysbub-absuche
 
-**grant_type:** client_credentials
-
-Die Credentials sind im body eines POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
-
-```bash
-token=$(curl \
--d "client_id=1c852184-1944-4a9e-a093-5cc078981294&client_secret=777f9915-9f0d-4982-9c33-07b5810a3e79&grant_type=client_credentials" \
--X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{500,}'|head -n 1)
-```
-
-Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot im header als 'OAuthAccessToken' inkludiert werden.
-
-**Hinweis:** Alternativ kann man bei folgenden GET-requests auch direkt die *client_id* als Header-Parameter *'X-API-Key'* übergeben - *'OAuthAccessToken'* ist in diesem Fall nicht erforderlich. 🚀
+Bei folgenden GET-requests ist die clientId als Header-Parameter 'X-API-Key' zu übergeben.
 
 
 ## Ausbildungssuche
@@ -153,6 +139,6 @@ Bildungsgutschein: true=nur Angebote mit Zulassung zur Förderung mit Bildungsgu
 
 ```bash
 wb=$(curl -m 60 \
--H "OAuthAccessToken: $token" \
+-H "X-API-Key: infosysbub-absuche" \
 'https://rest.arbeitsagentur.de/infosysbub/absuche/pc/v1/ausbildungsangebot?bart=101&sty=0')
 ```
