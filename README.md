@@ -4,7 +4,7 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 
 ## Authentifizierung
 
-Die Authentifizierung funktioniert über die clientId der Ausbildungssuchesuche, die einem GET-request an https://web.arbeitsagentur.de/weiterbildungssuche/suche entnommen werden kann:
+Die Authentifizierung funktioniert über die clientId der Ausbildungssuche, die einem GET-request an https://web.arbeitsagentur.de/weiterbildungssuche/suche entnommen werden kann:
 
 **clientId:** infosysbub-absuche
 
